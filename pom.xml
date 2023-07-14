@@ -4,7 +4,7 @@
  <groupId>gcfv2pubsub</groupId>
  <artifactId>http</artifactId>
  <version>0.0.1</version>
- <name>Cloud Pub/Sub Function for GCFv2</name>
+ <name>Cloud Pub/Sub Function for GCP</name>
 
  <properties>
    <maven.compiler.target>17</maven.compiler.target>
@@ -57,7 +57,6 @@
          <groupId>com.google.cloud</groupId>
          <artifactId>google-cloud-firestore</artifactId>
      </dependency>
-     <!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-admin -->
      <dependency>
          <groupId>com.google.firebase</groupId>
          <artifactId>firebase-admin</artifactId>
