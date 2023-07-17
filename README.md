@@ -29,7 +29,7 @@ To deploy a cloud function, run the following command on the console :
 The message should be of the model class format. 
 
 {
-  "message": {
+
     "carId": 123,
     "carModel": "Example Model",
     "brand": "Example Brand",
@@ -38,7 +38,6 @@ The message should be of the model class format.
     "mileage": 5000.0,
     "price": 25000.0,
     "location": "Edin"
-  }
 }
 
 3. After the cloud function is triggered, you can check the logs to monitor its execution and any error messages.
