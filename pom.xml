@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
- <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
- <groupId>gcfv2pubsub</groupId>
- <artifactId>pubsub-gcp-function</artifactId>
- <version>0.0.1</version>
- <name>Cloud Pub/Sub Function for GCFv2</name>
+    <groupId>gcfv2pubsub</groupId>
+    <artifactId>http</artifactId>
+    <version>0.0.1</version>
+    <name>Cloud Pub/Sub Function for GCP</name>
 
  <properties>
    <maven.compiler.target>17</maven.compiler.target>
@@ -22,11 +22,6 @@
         </dependencies>
     </dependencyManagement>
  <dependencies>
-   <dependency>
-     <groupId>com.google.cloud.functions</groupId>
-     <artifactId>functions-framework-api</artifactId>
-     <version>1.0.4</version>
-   </dependency>
      <dependency>
          <groupId>com.fasterxml.jackson.dataformat</groupId>
          <artifactId>jackson-dataformat-xml</artifactId>
@@ -38,8 +33,17 @@
          <version>1.18.28</version>
          <scope>provided</scope>
      </dependency>
-
      <dependency>
+         <groupId>com.google.cloud.functions</groupId>
+         <artifactId>functions-framework-api</artifactId>
+         <version>1.0.4</version>
+     </dependency>
+     <dependency>
+       <groupId>com.google.cloud.functions</groupId>
+       <artifactId>functions-framework-api</artifactId>
+       <version>1.0.4</version>
+     </dependency>
+   <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloudevent-types</artifactId>
       <version>0.1.5</version>

@@ -57,3 +57,7 @@ public class Vehicle {
      */
     private Double mileageInKmpl;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> e159373922dc14a2f19c6e50fd4ef1b521177a5d
