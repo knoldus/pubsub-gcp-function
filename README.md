@@ -32,7 +32,7 @@ To utilize this project, follow the steps below
 + Deploy the cloud function to Google Cloud Platform.
 + Open the console and navigate to the project directory.Run the following command to deploy the cloud function.
     
-    gcloud alpha functions deploy cloud_function --entry-point pubsub.PubSubDataHandler --runtime java17 --trigger-topic topic_name
+      gcloud alpha functions deploy cloud_function --entry-point pubsub.PubSubDataHandler --runtime java17 --trigger-topic topic_name
 
 ### Publishing a Message to the Topic
 After deploying the cloud function, publish a message to the configured topic.
