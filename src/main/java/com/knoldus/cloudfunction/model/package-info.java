@@ -3,4 +3,3 @@
  * Cloud Function.
  */
 package com.knoldus.cloudfunction.model;
-package com.knoldus.cloudfunction.model;

@@ -15,7 +15,7 @@ public class Vehicle {
     /**
      * The model of the car.
      */
-    private String carModel;
+    private String model;
 
     /**
      * The brand of the car.
