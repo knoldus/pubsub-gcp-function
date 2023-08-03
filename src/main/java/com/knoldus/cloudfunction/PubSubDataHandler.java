@@ -64,19 +64,20 @@ public class PubSubDataHandler implements CloudEventsFunction {
     logger.info("Pub/Sub message: " + decodedData);
 
     Vehicle vehicleData = objectMapper.readValue(decodedData, Vehicle.class);
+    logger.info(vehicleData.toString());
 
     double priceInRupees = transformPrice(vehicleData
             .getPrice());
     double mileageInKmpl = transformMileage(vehicleData
             .getMileage());
 
-    vehicleData.setPriceInRupees(priceInRupees);
-    vehicleData.setMileageInKmpl(mileageInKmpl);
+    vehicleData.setPrice(priceInRupees);
+    vehicleData.setMileage(mileageInKmpl);
 
     logger.info("Mileage in kmpl: " + vehicleData
-            .getMileageInKmpl());
+            .getMileage());
     logger.info("Price in rupees: " + vehicleData
-            .getPriceInRupees());
+            .getPrice());
     saveDataToFirestore(vehicleData);
   }
   /**
@@ -101,10 +102,10 @@ public class PubSubDataHandler implements CloudEventsFunction {
   }
   /**
    * Saves the data from the provided
-   * Vehicle object to Firestore.
+   * model.Vehicle object to Firestore.
    *
    * @param vehicleData
-   * The Vehicle object containing the data to be saved.
+   * The model.Vehicle object containing the data to be saved.
    */
   void saveDataToFirestore(
           final Vehicle vehicleData) {
@@ -112,7 +113,7 @@ public class PubSubDataHandler implements CloudEventsFunction {
             .valueOf(vehicleData.getCarId());
     logger.info("document id : " + documentId);
     DocumentReference destinationDocRef =
-            firestore.collection("vehicle")
+            firestore.collection("Car")
                     .document(documentId);
     destinationDocRef.set(vehicleData);
   }

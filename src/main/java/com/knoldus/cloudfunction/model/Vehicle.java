@@ -15,7 +15,7 @@ public class Vehicle {
     /**
      * The model of the car.
      */
-    private String carModel;
+    private String model;
 
     /**
      * The brand of the car.
@@ -42,19 +42,4 @@ public class Vehicle {
      */
     private Double price;
 
-    /**
-     * The location of the car.
-     */
-    private String location;
-
-    /**
-     * The price of the car in Rupees.
-     */
-    private Double priceInRupees;
-
-    /**
-     * The mileage of the car in kilometers per liter (kmpl).
-     */
-    private Double mileageInKmpl;
 }
-
