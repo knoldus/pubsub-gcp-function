@@ -1,0 +1,36 @@
+name: Deploy Cloud Function
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  setup-build-deploy:
+    name: Setup, Build, and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: 17
+      - run: mvn clean install --batch-mode --errors --fail-at-end
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Authenticate with Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCLOUD_APPLICATION_CREDENTIALS }}
+
+      - name: Deploy Cloud Function
+        id: deploy
+        uses: google-github-actions/deploy-cloud-functions@v1
+        with:
+          name: 'vehicle'
+          runtime: 'java17'
+          event_trigger_type: 'google.pubsub.topic.publish'
+          event_trigger_resource: ${{ secrets.EVENT_TRIGGER_RESOURCE}}
+          entry_point: 'com.knoldus.cloudfunction.PubSubDataHandler'
